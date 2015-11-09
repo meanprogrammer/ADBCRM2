@@ -6,17 +6,17 @@
 		<Columns>
 			<asp:TemplateField HeaderText="First Name">
 				<ItemTemplate>
-					<asp:Label Text='<%# Eval("firstname")%>' runat="server" />
+					<asp:Label Text='<%# Eval("Name")%>' runat="server" />
 				</ItemTemplate>
 			</asp:TemplateField>
 			<asp:TemplateField HeaderText="Last Name">
 				<ItemTemplate>
-					<asp:Label Text='<%# Eval("lastname") %>' runat="server" />
+					<asp:Label Text='<%# Eval("new_Borrower") %>' runat="server" />
 				</ItemTemplate>
 			</asp:TemplateField>
 			<asp:TemplateField HeaderText="City">
 				<ItemTemplate>
-					<asp:Label Text='<%# Eval("address1_city") %>' runat="server" />
+					<asp:Label Text='<%# Eval("new_ApprovalLevel") %>' runat="server" />
 				</ItemTemplate>
 			</asp:TemplateField>
 		</Columns>
