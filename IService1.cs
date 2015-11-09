@@ -14,6 +14,12 @@ namespace WebAppWalkthrough
     public interface IService1
     {
         [OperationContract]
-        void DoWork();
+        ResultType DoWork(string name);
+    }
+
+    public class ResultType
+    {
+        public string Prop1 { get; set; }
+        public string Prop2 { get; set; }
     }
 }
