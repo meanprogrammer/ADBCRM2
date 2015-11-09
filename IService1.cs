@@ -19,6 +19,9 @@ namespace WebAppWalkthrough
 
         [OperationContract]
         CustomOpp GetOpportunityByName(int id);
+
+        [OperationContract]
+        List<Xrm.Account> GetAllAccounts();
     }
     public class ResultType
     {

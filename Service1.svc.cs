@@ -28,6 +28,13 @@ namespace WebAppWalkthrough
                 Lastname = "Dudan"
             };
         }
+
+
+        public List<Account> GetAllAccounts()
+        {
+            var xrm = new XrmServiceContext("Xrm");
+            return xrm.AccountSet.ToList();
+        }
     }
 
     public class CustomOpp 
