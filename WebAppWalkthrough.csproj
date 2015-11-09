@@ -131,8 +131,6 @@
     <Content Include="bin\System.Data.dll" />
     <Content Include="bin\System.dll" />
     <Content Include="bin\System.Xml.dll" />
-    <Content Include="bin\tools\CrmSvcUtil.exe" />
-    <Content Include="bin\tools\Microsoft.Xrm.Sdk.dll" />
     <Content Include="CrmData.svc" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -202,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\tools\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
