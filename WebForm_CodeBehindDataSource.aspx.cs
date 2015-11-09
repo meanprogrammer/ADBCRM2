@@ -11,8 +11,7 @@ namespace WebAppWalkthrough
 			var xrm = new XrmServiceContext("Xrm");
 
 			//grab all contacts where the email address ends in @example.com
-			var exampleContacts = xrm.ContactSet
-				.Where(c => c.EMailAddress1.EndsWith("@example.com"));
+            var exampleContacts = xrm.OpportunitySet.Where(x => x.Name == "Bhutan: Road Network Project II");
 
 			ContactsGridView.DataSource = exampleContacts;
 			ContactsGridView.DataBind();
