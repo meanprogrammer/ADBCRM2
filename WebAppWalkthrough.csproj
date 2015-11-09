@@ -93,6 +93,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Data.Services.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Design" />
@@ -127,27 +128,9 @@
     <Content Include="bin\Microsoft.Xrm.Portal.dll" />
     <Content Include="bin\Microsoft.Xrm.Portal.Files.dll" />
     <Content Include="bin\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\System.Core.dll" />
-    <Content Include="bin\System.Data.DataSetExtensions.dll" />
     <Content Include="bin\System.Data.dll" />
-    <Content Include="bin\System.Data.Entity.dll" />
-    <Content Include="bin\System.Data.Services.Client.dll" />
-    <Content Include="bin\System.Data.Services.dll" />
     <Content Include="bin\System.dll" />
-    <Content Include="bin\System.Drawing.dll" />
-    <Content Include="bin\System.EnterpriseServices.dll" />
-    <Content Include="bin\System.Runtime.Caching.dll" />
-    <Content Include="bin\System.Runtime.Serialization.dll" />
-    <Content Include="bin\System.ServiceModel.dll" />
-    <Content Include="bin\System.ServiceModel.Web.dll" />
-    <Content Include="bin\System.Web.ApplicationServices.dll" />
-    <Content Include="bin\System.Web.dll" />
-    <Content Include="bin\System.Web.DynamicData.dll" />
-    <Content Include="bin\System.Web.Entity.dll" />
-    <Content Include="bin\System.Web.Extensions.dll" />
-    <Content Include="bin\System.Web.Services.dll" />
     <Content Include="bin\System.Xml.dll" />
-    <Content Include="bin\System.Xml.Linq.dll" />
     <Content Include="bin\tools\CrmSvcUtil.exe" />
     <Content Include="bin\tools\Microsoft.Xrm.Sdk.dll" />
     <Content Include="CrmData.svc" />
