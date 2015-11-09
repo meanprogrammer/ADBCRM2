@@ -18,9 +18,8 @@ namespace WebAppWalkthrough
         ResultType DoWork(string name);
 
         [OperationContract]
-        Xrm.Opportunity GetOpportunityByName(string name);
+        CustomOpp GetOpportunityByNameGetOpportunityByName(string name, int id);
     }
-
     public class ResultType
     {
         public string Prop1 { get; set; }

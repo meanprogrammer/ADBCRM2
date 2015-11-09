@@ -19,13 +19,17 @@ namespace WebAppWalkthrough
         }
 
 
-        public Xrm.Opportunity GetOpportunityByName(string name)
-        {
-            var xrm = new XrmServiceContext("Xrm");
 
-            //grab all contacts where the email address ends in @example.com
-            var exampleContacts = xrm.OpportunitySet.Where(x => x.Name == "Bhutan: Road Network Project II").FirstOrDefault();
-            return exampleContacts;
+        public CustomOpp GetOpportunityByNameGetOpportunityByName(string name, int id)
+        {
+            return new CustomOpp() { ID = 1 };
         }
+    }
+
+    public class CustomOpp : Xrm.Opportunity
+    {
+        
+        public int ID { get; set; }
+        
     }
 }
