@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Text;
+using Xrm;
 
 namespace WebAppWalkthrough
 {
@@ -15,6 +16,9 @@ namespace WebAppWalkthrough
     {
         [OperationContract]
         ResultType DoWork(string name);
+
+        [OperationContract]
+        Xrm.Opportunity GetOpportunityByName(string name);
     }
 
     public class ResultType
