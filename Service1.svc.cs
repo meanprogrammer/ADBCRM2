@@ -20,16 +20,21 @@ namespace WebAppWalkthrough
 
 
 
-        public CustomOpp GetOpportunityByNameGetOpportunityByName(string name, int id)
+
+        public CustomOpp GetOpportunityByName(int id)
         {
-            return new CustomOpp() { ID = 1 };
+            return new CustomOpp() { 
+                ID = 32767,
+                Lastname = "Dudan"
+            };
         }
     }
 
     public class CustomOpp 
     {
-        
         public int ID { get; set; }
-        
+        public string Lastname { get; set; }
+        public string FirstName { get; set; }
+        public string MI { get; set; }
     }
 }

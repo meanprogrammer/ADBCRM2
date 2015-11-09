@@ -18,7 +18,7 @@ namespace WebAppWalkthrough
         ResultType DoWork(string name);
 
         [OperationContract]
-        CustomOpp GetOpportunityByNameGetOpportunityByName(string name, int id);
+        CustomOpp GetOpportunityByName(int id);
     }
     public class ResultType
     {
