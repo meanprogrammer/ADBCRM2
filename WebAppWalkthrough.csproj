@@ -127,7 +127,6 @@
     <Content Include="bin\Microsoft.Xrm.Portal.dll" />
     <Content Include="bin\Microsoft.Xrm.Portal.Files.dll" />
     <Content Include="bin\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\System.Configuration.dll" />
     <Content Include="bin\System.Core.dll" />
     <Content Include="bin\System.Data.DataSetExtensions.dll" />
     <Content Include="bin\System.Data.dll" />
