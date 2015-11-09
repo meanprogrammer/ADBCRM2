@@ -26,7 +26,7 @@ namespace WebAppWalkthrough
         }
     }
 
-    public class CustomOpp : Xrm.Opportunity
+    public class CustomOpp 
     {
         
         public int ID { get; set; }
