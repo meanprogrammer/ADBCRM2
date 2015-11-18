@@ -57,9 +57,12 @@ namespace WebAppWalkthrough
         }
     }
 
+    [DataContract]
     public class CustomAccount {
         
+        [DataMember]
         public Guid? AccountId { get; set; }
+        [DataMember]
         public string Name { get; set; }
     }
 
