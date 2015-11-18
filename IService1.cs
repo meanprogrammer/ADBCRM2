@@ -24,7 +24,7 @@ namespace WebAppWalkthrough
         List<Xrm.Account> GetAllAccounts();
 
         [OperationContract]
-        CustomAccount GetOneAccount(Guid? guid);
+        CustomAccount GetOneAccount(string id);
     }
     public class ResultType
     {

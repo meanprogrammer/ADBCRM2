@@ -36,11 +36,12 @@ namespace WebAppWalkthrough
             return xrm.AccountSet.ToList();
         }
 
-        public CustomAccount GetOneAccount(Guid? guid)
+        public CustomAccount GetOneAccount(string id)
         {
             var xrm = new XrmServiceContext("Xrm");
             //return 
             Xrm.Account orig = xrm.AccountSet.Where(c => c.Name.Contains("Bhutan")).FirstOrDefault();
+           
             return ObjConverter.ConvertToReadableAccount(orig);
         }
     }
