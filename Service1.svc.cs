@@ -51,6 +51,7 @@ namespace WebAppWalkthrough
         {
             CustomAccount ca = new CustomAccount();
             ca.AccountId = orig.AccountId;
+            ca.Name = orig.Name;
             return ca;
         }
     }
@@ -58,7 +59,8 @@ namespace WebAppWalkthrough
     public class CustomAccount {
         
         public Guid? AccountId { get; set; }
-}
+        public string Name { get; set; }
+    }
 
     public class CustomOpp 
     {
