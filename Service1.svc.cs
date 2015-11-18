@@ -13,30 +13,7 @@ namespace WebAppWalkthrough
     public class Service1 : IService1
     {
 
-        public ResultType DoWork(string name)
-        {
-            return new ResultType() { Prop1 = "abc", Prop2 = "xyz" };
-        }
-
-
-
-
-        public CustomOpp GetOpportunityByName(int id)
-        {
-            return new CustomOpp() {
-                ID = 32767,
-                Lastname = "Dudan"
-            };
-        }
-
-
-        public List<Account> GetAllAccounts()
-        {
-            var xrm = new XrmServiceContext("Xrm");
-            return xrm.AccountSet.ToList();
-        }
-
-        public CustomAccount GetOneAccount(string id)
+        public CustomAccount GetOneAccount(Guid id)
         {
             var xrm = new XrmServiceContext("Xrm");
             //return 
@@ -59,7 +36,9 @@ namespace WebAppWalkthrough
 
     [DataContract]
     public class CustomAccount {
-        
+
+        [DataMember]
+        public Guid Id { get; set; }
         [DataMember]
         public Guid? AccountId { get; set; }
         [DataMember]

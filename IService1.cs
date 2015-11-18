@@ -15,20 +15,6 @@ namespace WebAppWalkthrough
     public interface IService1
     {
         [OperationContract]
-        ResultType DoWork(string name);
-
-        [OperationContract]
-        CustomOpp GetOpportunityByName(int id);
-
-        [OperationContract]
-        List<Xrm.Account> GetAllAccounts();
-
-        [OperationContract]
-        CustomAccount GetOneAccount(string id);
-    }
-    public class ResultType
-    {
-        public string Prop1 { get; set; }
-        public string Prop2 { get; set; }
+        CustomAccount GetOneAccount(Guid id);
     }
 }
