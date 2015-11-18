@@ -15,7 +15,7 @@ namespace WebAppWalkthrough
 
         public ResultType DoWork(string name)
         {
-            return new ResultType() { Prop1 = "abc", Prop2="xyz" };
+            return new ResultType() { Prop1 = "abc", Prop2 = "xyz" };
         }
 
 
@@ -23,7 +23,7 @@ namespace WebAppWalkthrough
 
         public CustomOpp GetOpportunityByName(int id)
         {
-            return new CustomOpp() { 
+            return new CustomOpp() {
                 ID = 32767,
                 Lastname = "Dudan"
             };
@@ -36,12 +36,29 @@ namespace WebAppWalkthrough
             return xrm.AccountSet.ToList();
         }
 
-        public Account GetOneAccount(Guid? guid)
+        public CustomAccount GetOneAccount(Guid? guid)
         {
             var xrm = new XrmServiceContext("Xrm");
-            return xrm.AccountSet.Where(c => c.AccountId == guid).FirstOrDefault();
+            //return 
+            Xrm.Account orig = xrm.AccountSet.Where(c => c.Name.Contains("Bhutan")).FirstOrDefault();
+            return ObjConverter.ConvertToReadableAccount(orig);
         }
     }
+
+    static class ObjConverter
+    {
+        public static CustomAccount ConvertToReadableAccount(Xrm.Account orig)
+        {
+            CustomAccount ca = new CustomAccount();
+            ca.AccountId = orig.AccountId;
+            return ca;
+        }
+    }
+
+    public class CustomAccount {
+        
+        public Guid? AccountId { get; set; }
+}
 
     public class CustomOpp 
     {
