@@ -35,6 +35,12 @@ namespace WebAppWalkthrough
             var xrm = new XrmServiceContext("Xrm");
             return xrm.AccountSet.ToList();
         }
+
+        public Account GetOneAccount(Guid? guid)
+        {
+            var xrm = new XrmServiceContext("Xrm");
+            return xrm.AccountSet.Where(c => c.AccountId == guid).FirstOrDefault();
+        }
     }
 
     public class CustomOpp 
