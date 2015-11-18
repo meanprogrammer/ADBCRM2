@@ -28,7 +28,7 @@ namespace WebAppWalkthrough
         public static CustomAccount ConvertToReadableAccount(Xrm.Account orig)
         {
             CustomAccount ca = new CustomAccount();
-            ca.AccountId = orig.AccountId;
+            
             ca.Name = orig.Name;
             return ca;
         }
@@ -38,12 +38,9 @@ namespace WebAppWalkthrough
     public class CustomAccount {
 
         [DataMember]
-        public int ReadId { get; set; }
-        [DataMember]
-        public Guid Id { get; set; }
-        [DataMember]
-        public Guid? AccountId { get; set; }
-        [DataMember]
+        public int Id { get; set; }
+     
+         [DataMember]
         public string Name { get; set; }
     }
 
