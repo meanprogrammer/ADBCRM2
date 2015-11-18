@@ -15,6 +15,6 @@ namespace WebAppWalkthrough
     public interface IService1
     {
         [OperationContract]
-        CustomAccount GetOneAccount(Guid id);
+        CustomAccount GetOneAccount(int id);
     }
 }

@@ -13,7 +13,7 @@ namespace WebAppWalkthrough
     public class Service1 : IService1
     {
 
-        public CustomAccount GetOneAccount(Guid id)
+        public CustomAccount GetOneAccount(int id)
         {
             var xrm = new XrmServiceContext("Xrm");
             //return 
@@ -37,6 +37,8 @@ namespace WebAppWalkthrough
     [DataContract]
     public class CustomAccount {
 
+        [DataMember]
+        public int ReadId { get; set; }
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]
