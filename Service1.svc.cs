@@ -34,6 +34,20 @@ namespace WebAppWalkthrough
            
             return ObjConverter.ConvertToReadableAccount(orig);
         }
+
+        public List<CustomOpportunity> GetAllOpportunity()
+        {
+            return new List<CustomOpportunity>();
+        }
+
+        public CustomOpportunity GetOneOpportunity(Guid id)
+        {
+            var xrm = new XrmServiceContext("Xrm");
+            //return 
+            Xrm.Opportunity orig = xrm.OpportunitySet.Where(c => c.Id == id).FirstOrDefault();
+
+            return ObjConverter.ConvertToReadableOpportunity(orig);
+        }
     }
 
     static class ObjConverter
@@ -44,6 +58,15 @@ namespace WebAppWalkthrough
             ca.Id = orig.Id;
             ca.Name = orig.Name;
             return ca;
+        }
+
+        public static CustomOpportunity ConvertToReadableOpportunity(Xrm.Opportunity orig)
+        {
+            CustomOpportunity co = new CustomOpportunity();
+            co.Id = orig.Id;
+            co.Name = orig.Name;
+            return co;
+
         }
     }
 
@@ -57,11 +80,12 @@ namespace WebAppWalkthrough
         public string Name { get; set; }
     }
 
-    public class CustomOpp 
+    [DataContract]
+    public class CustomOpportunity
     {
-        public int ID { get; set; }
-        public string Lastname { get; set; }
-        public string FirstName { get; set; }
-        public string MI { get; set; }
+        [DataMember]
+        public Guid Id { get; set; }
+        [DataMember]
+        public string Name { get; set; }
     }
 }

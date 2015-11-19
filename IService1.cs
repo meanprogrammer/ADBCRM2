@@ -18,5 +18,9 @@ namespace WebAppWalkthrough
         CustomAccount GetOneAccount(Guid id);
         [OperationContract]
         List<CustomAccount> GetAllAccount();
+        [OperationContract]
+        List<CustomOpportunity> GetAllOpportunity();
+        [OperationContract]
+        CustomOpportunity GetOneOpportunity(Guid id);
     }
 }
