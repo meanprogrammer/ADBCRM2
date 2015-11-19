@@ -75,6 +75,8 @@ namespace WebAppWalkthrough
             co.Id = orig.Id;
             co.Name = orig.Name;
             co.Description = orig.Description;
+            co.ProjectDescription = orig.new_ProjectDescription;
+            co.ProjectRationale = orig.new_ProjectRationale;
             return co;
 
         }
@@ -99,5 +101,9 @@ namespace WebAppWalkthrough
         public string Name { get; set; }
         [DataMember]
         public string Description { get; set; }
+        [DataMember]
+        public string ProjectDescription { get; set; }
+        [DataMember]
+        public string ProjectRationale { get; set; }
     }
 }
