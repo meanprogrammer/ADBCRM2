@@ -22,5 +22,7 @@ namespace WebAppWalkthrough
         List<CustomOpportunity> GetAllOpportunity();
         [OperationContract]
         CustomOpportunity GetOneOpportunity(Guid id);
+        [OperationContract]
+        bool UpdateOpportunity(Guid id, CustomOpportunity opp);
     }
 }

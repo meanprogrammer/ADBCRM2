@@ -57,6 +57,15 @@ namespace WebAppWalkthrough
 
             return ObjConverter.ConvertToReadableOpportunity(orig);
         }
+
+        public bool UpdateOpportunity(Guid id, CustomOpportunity opp)
+        {
+            var xrm = new XrmServiceContext("Xrm");
+            Xrm.Opportunity orig = xrm.OpportunitySet.Where(c => c.Id == id).FirstOrDefault();
+            orig.Description = opp.Description;
+            xrm.Update(orig);
+            return true;
+        }
     }
 
     static class ObjConverter
