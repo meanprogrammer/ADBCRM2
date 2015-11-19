@@ -74,6 +74,7 @@ namespace WebAppWalkthrough
             CustomOpportunity co = new CustomOpportunity();
             co.Id = orig.Id;
             co.Name = orig.Name;
+            co.Description = orig.Description;
             return co;
 
         }
@@ -96,5 +97,7 @@ namespace WebAppWalkthrough
         public Guid Id { get; set; }
         [DataMember]
         public string Name { get; set; }
+        [DataMember]
+        public string Description { get; set; }
     }
 }
