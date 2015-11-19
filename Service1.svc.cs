@@ -37,7 +37,16 @@ namespace WebAppWalkthrough
 
         public List<CustomOpportunity> GetAllOpportunity()
         {
-            return new List<CustomOpportunity>();
+            var xrm = new XrmServiceContext("Xrm");
+            var all = xrm.OpportunitySet.ToList();
+
+            List<CustomOpportunity> accs = new List<CustomOpportunity>();
+            foreach (Xrm.Opportunity item in all)
+            {
+                CustomOpportunity converted = ObjConverter.ConvertToReadableOpportunity(item);
+                accs.Add(converted);
+            }
+            return accs;
         }
 
         public CustomOpportunity GetOneOpportunity(Guid id)
