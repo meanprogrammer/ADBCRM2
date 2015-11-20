@@ -24,6 +24,6 @@ namespace WebAppWalkthrough
 
             ContactsGridView.DataSource = exampleContacts;
             ContactsGridView.DataBind();
-        }
+        } 
 	}
 }
