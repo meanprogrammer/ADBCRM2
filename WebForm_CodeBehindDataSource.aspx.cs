@@ -20,8 +20,11 @@ namespace WebAppWalkthrough
 
             var single = exampleContacts.FirstOrDefault();
 
-            Literal1.Text = (single.new_opportunity_new_covenants_projectid == null || single.new_opportunity_new_covenants.Count() == 0) ? "0" : single.new_opportunity_new_covenants.Count().ToString();
-
+            if (single == null) { Literal1.Text = "Not found!"; }
+            else
+            {
+                Literal1.Text = (single.new_opportunity_new_covenants_projectid == null || single.new_opportunity_new_covenants.Count() == 0) ? "0" : single.new_opportunity_new_covenants.Count().ToString();
+            }
 
 
             ContactsGridView.DataSource = exampleContacts;
