@@ -34,7 +34,7 @@ namespace WebAppWalkthrough
 
             var single = op.FirstOrDefault();
 
-            this.GridView1.DataSource = single.new_opportunity_new_covenants.ToList();
+            this.GridView1.DataSource = single.new_opportunity_new_covenants_projectid;
             this.GridView1.DataBind();
         }
     }
