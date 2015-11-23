@@ -15,9 +15,21 @@ namespace WebAppWalkthrough
             var xrm = new XrmServiceContext("Xrm");
 
             //grab all contacts where the email address ends in @example.com
-            var exampleContacts = xrm.OpportunitySet.Where(c => c.Id == Guid.Parse("573b99ed-bf50-e511-80ee-3863bb2eb8d8"));
+            var opps = xrm.OpportunitySet.ToList();
+            this.OpportunityDropdown.DataSource = opps;
+            this.OpportunityDropdown.DataBind();
 
-            this.DetailsView1.DataSource = exampleContacts;
+
+            
+        }
+
+        protected void OpportunityDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var xrm = new XrmServiceContext("Xrm");
+
+            var op = xrm.OpportunitySet.Where(c => c.Id == Guid.Parse(this.OpportunityDropdown.SelectedItem.Value));
+
+            this.DetailsView1.DataSource = op;
             this.DetailsView1.DataBind();
         }
     }

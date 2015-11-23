@@ -9,7 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <asp:DropDownList ID="OpportunityDropdown" runat="server" AutoPostBack="True" DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="OpportunityDropdown_SelectedIndexChanged"></asp:DropDownList>
+    </div>
+    <div>
+        
         <asp:DetailsView ID="DetailsView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Height="50px" Width="125px">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
