@@ -39,7 +39,14 @@ namespace WebAppWalkthrough
 
             var single = op.FirstOrDefault();
 
-            this.GridView1.DataSource = single.new_opportunity_new_nsocovenant.ToList();
+            if (single.new_CategoryType == 100000001)
+            {
+                this.GridView1.DataSource = single.new_opportunity_new_nsocovenant.ToList();
+            }
+            else
+            {
+                this.GridView1.DataSource = single.new_opportunity_new_covenants.ToList();
+            }
             this.GridView1.DataBind();
         }
     }
