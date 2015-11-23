@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:DropDownList ID="OpportunityDropdown" runat="server" AutoPostBack="True" DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="OpportunityDropdown_SelectedIndexChanged"></asp:DropDownList>
+        <asp:DropDownList ID="OpportunityDropdown" runat="server" DataTextField="Name" DataValueField="ID" OnSelectedIndexChanged="OpportunityDropdown_SelectedIndexChanged"></asp:DropDownList>
+    &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" />
     </div>
     <div>
         

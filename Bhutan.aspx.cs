@@ -25,6 +25,11 @@ namespace WebAppWalkthrough
 
         protected void OpportunityDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
             var xrm = new XrmServiceContext("Xrm");
 
             var op = xrm.OpportunitySet.Where(c => c.Id == Guid.Parse(this.OpportunityDropdown.SelectedItem.Value));
@@ -34,7 +39,7 @@ namespace WebAppWalkthrough
 
             var single = op.FirstOrDefault();
 
-            this.GridView1.DataSource = single.new_opportunity_new_covenants_projectid;
+            this.GridView1.DataSource = single.new_opportunity_new_covenants.ToList();
             this.GridView1.DataBind();
         }
     }
