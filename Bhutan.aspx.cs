@@ -31,6 +31,11 @@ namespace WebAppWalkthrough
 
             this.DetailsView1.DataSource = op;
             this.DetailsView1.DataBind();
+
+            var single = op.FirstOrDefault();
+
+            this.GridView1.DataSource = single.new_opportunity_new_covenants.ToList();
+            this.GridView1.DataBind();
         }
     }
 }
