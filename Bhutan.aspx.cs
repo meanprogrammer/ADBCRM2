@@ -12,15 +12,15 @@ namespace WebAppWalkthrough
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var xrm = new XrmServiceContext("Xrm");
+            if (!Page.IsPostBack)
+            {
+                var xrm = new XrmServiceContext("Xrm");
 
-            //grab all contacts where the email address ends in @example.com
-            var opps = xrm.OpportunitySet.ToList();
-            this.OpportunityDropdown.DataSource = opps;
-            this.OpportunityDropdown.DataBind();
-
-
-            
+                //grab all contacts where the email address ends in @example.com
+                var opps = xrm.OpportunitySet.ToList();
+                this.OpportunityDropdown.DataSource = opps;
+                this.OpportunityDropdown.DataBind();
+            }
         }
 
         protected void OpportunityDropdown_SelectedIndexChanged(object sender, EventArgs e)
