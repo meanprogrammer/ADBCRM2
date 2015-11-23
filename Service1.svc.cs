@@ -86,8 +86,39 @@ namespace WebAppWalkthrough
             co.Description = orig.Description;
             co.ProjectDescription = orig.new_ProjectDescription;
             co.ProjectRationale = orig.new_ProjectRationale;
+
+            //orig.cov
+
             return co;
 
+        }
+
+        private static List<CustomNSOCovenant> ConvertToNSOCovenant(IEnumerable<new_nsocovenant> list)
+        {
+            List<CustomNSOCovenant> nsos = new List<CustomNSOCovenant>();
+            foreach (var item in list)
+            {
+                CustomNSOCovenant cov = new CustomNSOCovenant();
+                cov.CovenantDescription = item.new_Description;
+                cov.CovenantID = item.new_nsocovenantId.Value;
+                cov.Name = item.new_name;
+                nsos.Add(cov);
+            }
+            return nsos;
+        }
+
+        private static List<CustomSOVCovenant> ConvertToSOVCovenant(IEnumerable<new_covenants> list)
+        {
+            List<CustomSOVCovenant> nsos = new List<CustomSOVCovenant>();
+            foreach (var item in list)
+            {
+                CustomSOVCovenant cov = new CustomSOVCovenant();
+                cov.CovenantDescription = item.new_CovenantDescription;
+                cov.CovenantID = item.new_CovenantID.Value;
+                cov.Name = item.new_name;
+                nsos.Add(cov);
+            }
+            return nsos;
         }
     }
 
@@ -114,5 +145,32 @@ namespace WebAppWalkthrough
         public string ProjectDescription { get; set; }
         [DataMember]
         public string ProjectRationale { get; set; }
+        [DataMember]
+        public List<CustomNSOCovenant> NSOCovenants { get; set; }
+        [DataMember]
+        public List<CustomSOVCovenant> SOVCovenants { get; set; }
+        
+    }
+
+    [DataContract]
+    public class CustomNSOCovenant 
+    {
+        [DataMember]
+        public string CovenantDescription { get; set; }
+        [DataMember]
+        public Guid CovenantID { get; set; }
+        [DataMember]
+        public string Name { get; set; }
+    }
+
+    [DataContract]
+    public class CustomSOVCovenant
+    { 
+        [DataMember]
+        public string CovenantDescription { get; set; }
+        [DataMember]
+        public int CovenantID { get; set; }
+        [DataMember]
+        public string Name { get; set; }
     }
 }
