@@ -134,6 +134,7 @@
     <Content Include="bin\System.dll" />
     <Content Include="bin\System.Xml.dll" />
     <Content Include="CrmData.svc" />
+    <Content Include="NSOCovenantService.svc" />
     <Content Include="Service1.svc" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -167,7 +168,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="INSOCovenantService.cs" />
     <Compile Include="IService1.cs" />
+    <Compile Include="NSOCovenantService.svc.cs">
+      <DependentUpon>NSOCovenantService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>

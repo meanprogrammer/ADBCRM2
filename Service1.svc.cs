@@ -20,7 +20,7 @@ namespace WebAppWalkthrough
             List<CustomAccount> accs = new List<CustomAccount>();
             foreach (Xrm.Account item in all)
             {
-                CustomAccount converted = ObjConverter.ConvertToReadableAccount(item);
+                CustomAccount converted = ObjectConverter.ConvertToReadableAccount(item);
                 accs.Add(converted);
             }
             return accs;
@@ -31,8 +31,8 @@ namespace WebAppWalkthrough
             var xrm = new XrmServiceContext("Xrm");
             //return 
             Xrm.Account orig = xrm.AccountSet.Where(c => c.Id == id).FirstOrDefault();
-           
-            return ObjConverter.ConvertToReadableAccount(orig);
+
+            return ObjectConverter.ConvertToReadableAccount(orig);
         }
 
         public List<CustomOpportunity> GetAllOpportunity()
@@ -43,7 +43,7 @@ namespace WebAppWalkthrough
             List<CustomOpportunity> accs = new List<CustomOpportunity>();
             foreach (Xrm.Opportunity item in all)
             {
-                CustomOpportunity converted = ObjConverter.ConvertToReadableOpportunity(item);
+                CustomOpportunity converted = ObjectConverter.ConvertToReadableOpportunity(item);
                 accs.Add(converted);
             }
             return accs;
@@ -55,7 +55,7 @@ namespace WebAppWalkthrough
             //return 
             Xrm.Opportunity orig = xrm.OpportunitySet.Where(c => c.Id == id).FirstOrDefault();
 
-            return ObjConverter.ConvertToReadableOpportunity(orig);
+            return ObjectConverter.ConvertToReadableOpportunity(orig);
         }
 
         public bool UpdateOpportunity(Guid id, CustomOpportunity opp)
@@ -68,59 +68,7 @@ namespace WebAppWalkthrough
         }
     }
 
-    static class ObjConverter
-    {
-        public static CustomAccount ConvertToReadableAccount(Xrm.Account orig)
-        {
-            CustomAccount ca = new CustomAccount();
-            ca.Id = orig.Id;
-            ca.Name = orig.Name;
-            return ca;
-        }
-
-        public static CustomOpportunity ConvertToReadableOpportunity(Xrm.Opportunity orig)
-        {
-            CustomOpportunity co = new CustomOpportunity();
-            co.Id = orig.Id;
-            co.Name = orig.Name;
-            co.Description = orig.Description;
-            co.ProjectDescription = orig.new_ProjectDescription;
-            co.ProjectRationale = orig.new_ProjectRationale;
-
-            //orig.cov
-
-            return co;
-
-        }
-
-        private static List<CustomNSOCovenant> ConvertToNSOCovenant(IEnumerable<new_nsocovenant> list)
-        {
-            List<CustomNSOCovenant> nsos = new List<CustomNSOCovenant>();
-            foreach (var item in list)
-            {
-                CustomNSOCovenant cov = new CustomNSOCovenant();
-                cov.CovenantDescription = item.new_Description;
-                cov.CovenantID = item.new_nsocovenantId.Value;
-                cov.Name = item.new_name;
-                nsos.Add(cov);
-            }
-            return nsos;
-        }
-
-        private static List<CustomSOVCovenant> ConvertToSOVCovenant(IEnumerable<new_covenants> list)
-        {
-            List<CustomSOVCovenant> nsos = new List<CustomSOVCovenant>();
-            foreach (var item in list)
-            {
-                CustomSOVCovenant cov = new CustomSOVCovenant();
-                cov.CovenantDescription = item.new_CovenantDescription;
-                cov.CovenantID = item.new_CovenantID.Value;
-                cov.Name = item.new_name;
-                nsos.Add(cov);
-            }
-            return nsos;
-        }
-    }
+    
 
     [DataContract]
     public class CustomAccount {
