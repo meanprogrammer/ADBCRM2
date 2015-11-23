@@ -13,8 +13,9 @@
         </tr>
     </table>
 
-	<asp:GridView ID="ContactsGridView" AutoGenerateColumns="false" runat="server">
+	<asp:GridView ID="ContactsGridView" AutoGenerateColumns="False" runat="server">
 		<Columns>
+			<asp:BoundField DataField="ID" HeaderText="ID" />
 			<asp:TemplateField HeaderText="First Name">
 				<ItemTemplate>
 					<asp:Label Text='<%# Eval("Name")%>' runat="server" />

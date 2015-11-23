@@ -122,6 +122,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bhutan.aspx" />
     <Content Include="bin\AntiXSSLibrary.dll" />
     <Content Include="bin\Microsoft.Crm.Sdk.Proxy.dll" />
     <Content Include="bin\Microsoft.CSharp.dll" />
@@ -149,6 +150,13 @@
     <Content Include="WebForm_FromSavedQuery.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bhutan.aspx.cs">
+      <DependentUpon>Bhutan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bhutan.aspx.designer.cs">
+      <DependentUpon>Bhutan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrmData.svc.cs">
       <DependentUpon>CrmData.svc</DependentUpon>
     </Compile>

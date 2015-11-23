@@ -18,15 +18,6 @@ namespace WebAppWalkthrough
             //grab all contacts where the email address ends in @example.com
             var exampleContacts = xrm.OpportunitySet.Where(x => x.Name == TextBox1.Text.Trim());
 
-            var single = exampleContacts.FirstOrDefault();
-
-            if (single == null) { Literal1.Text = "Not found!"; }
-            else
-            {
-                Literal1.Text = (single.new_opportunity_new_covenants == null || single.new_opportunity_new_covenants.Count() == 0) ? "0" : single.new_opportunity_new_covenants.Count().ToString();
-            }
-
-
             ContactsGridView.DataSource = exampleContacts;
             ContactsGridView.DataBind();
         } 
