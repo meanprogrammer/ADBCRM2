@@ -24,8 +24,14 @@
     
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" EmptyDataText="No covenants." ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" EmptyDataText="No covenants." ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" />
+                <asp:BoundField DataField="new_CovenantDescription" HeaderText="CovenantDescription" />
+                <asp:BoundField DataField="new_name" HeaderText="Name" />
+                <asp:BoundField DataField="new_opportunity_new_covenants.Id" HeaderText="ParentID" />
+            </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
