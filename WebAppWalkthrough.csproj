@@ -136,6 +136,7 @@
     <Content Include="CrmData.svc" />
     <Content Include="NSOCovenantService.svc" />
     <Content Include="Service1.svc" />
+    <Content Include="SOVCovenantService.svc" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
@@ -170,6 +171,7 @@
     </Compile>
     <Compile Include="INSOCovenantService.cs" />
     <Compile Include="IService1.cs" />
+    <Compile Include="ISOVCovenantService.cs" />
     <Compile Include="NSOCovenantService.svc.cs">
       <DependentUpon>NSOCovenantService.svc</DependentUpon>
     </Compile>
@@ -184,6 +186,9 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SOVCovenantService.svc.cs">
+      <DependentUpon>SOVCovenantService.svc</DependentUpon>
     </Compile>
     <Compile Include="WebForm_CodeBehindDataSource.aspx.cs">
       <DependentUpon>WebForm_CodeBehindDataSource.aspx</DependentUpon>
