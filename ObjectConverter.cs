@@ -20,6 +20,7 @@ namespace WebAppWalkthrough
         {
             CustomOpportunity co = new CustomOpportunity();
             co.Id = orig.Id;
+            co.OpportunityId = orig.OpportunityId.Value;
             co.Name = orig.Name;
             co.Description = orig.Description;
             co.ProjectDescription = orig.new_ProjectDescription;
@@ -40,6 +41,7 @@ namespace WebAppWalkthrough
                 cov.CovenantDescription = item.new_Description;
                 cov.CovenantID = item.new_nsocovenantId.Value;
                 cov.Name = item.new_name;
+                cov.ParentID = (item.new_opportunity_new_nsocovenant != null) ? item.new_opportunity_new_nsocovenant.Id : Guid.Empty;
                 nsos.Add(cov);
             }
             return nsos;

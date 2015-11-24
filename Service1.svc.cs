@@ -86,6 +86,8 @@ namespace WebAppWalkthrough
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]
+        public Guid OpportunityId { get; set; }
+        [DataMember]
         public string Name { get; set; }
         [DataMember]
         public string Description { get; set; }
@@ -109,6 +111,8 @@ namespace WebAppWalkthrough
         public Guid CovenantID { get; set; }
         [DataMember]
         public string Name { get; set; }
+        [DataMember]
+        public Guid ParentID { get; set; }
     }
 
     [DataContract]
