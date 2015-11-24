@@ -30,7 +30,7 @@
                 <asp:BoundField DataField="Id" HeaderText="Id" />
                 <asp:BoundField DataField="new_CovenantDescription" HeaderText="CovenantDescription" />
                 <asp:BoundField DataField="new_name" HeaderText="Name" />
-                <asp:BoundField DataField="new_opportunity_new_nsocovenant.Id" HeaderText="ParentID" />
+                <asp:BoundField DataField="new_opportunity_new_covenants.Id" HeaderText="ParentID" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

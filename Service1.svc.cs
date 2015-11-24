@@ -126,5 +126,7 @@ namespace WebAppWalkthrough
         public int CovenantID { get; set; }
         [DataMember]
         public string Name { get; set; }
+        [DataMember]
+        public Guid ParentID { get; set; }
     }
 }
