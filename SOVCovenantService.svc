@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebAppWalkthrough.SOVCovenant" CodeBehind="SOVCovenantService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebAppWalkthrough.SOVCovenantService" CodeBehind="SOVCovenantService.svc.cs" %>
