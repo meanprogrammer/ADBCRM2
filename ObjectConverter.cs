@@ -42,6 +42,7 @@ namespace WebAppWalkthrough
                 cov.CovenantID = item.new_nsocovenantId.Value;
                 cov.Name = item.new_name;
                 cov.ParentID = (item.new_opportunity_new_nsocovenant != null) ? item.new_opportunity_new_nsocovenant.Id : Guid.Empty;
+                cov.ParentIDString = cov.ParentID.ToString();
                 nsos.Add(cov);
             }
             return nsos;

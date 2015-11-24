@@ -113,6 +113,8 @@ namespace WebAppWalkthrough
         public string Name { get; set; }
         [DataMember]
         public Guid ParentID { get; set; }
+        [DataMember]
+        public string ParentIDString { get; set; }
     }
 
     [DataContract]
