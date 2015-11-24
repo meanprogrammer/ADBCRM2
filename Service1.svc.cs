@@ -123,7 +123,7 @@ namespace WebAppWalkthrough
         [DataMember]
         public string CovenantDescription { get; set; }
         [DataMember]
-        public int CovenantID { get; set; }
+        public Guid CovenantID { get; set; }
         [DataMember]
         public string Name { get; set; }
         [DataMember]

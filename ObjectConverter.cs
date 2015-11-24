@@ -55,7 +55,7 @@ namespace WebAppWalkthrough
             {
                 CustomSOVCovenant cov = new CustomSOVCovenant();
                 cov.CovenantDescription = item.new_CovenantDescription;
-                cov.CovenantID = item.new_CovenantID.Value;
+                cov.CovenantID = item.new_covenantsId.Value;
                 cov.Name = item.new_name;
                 cov.ParentID = (item.new_opportunity_new_covenants != null) ? item.new_opportunity_new_covenants.Id : Guid.Empty;
                 nsos.Add(cov);
