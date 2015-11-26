@@ -53,10 +53,33 @@ namespace WebAppWalkthrough
             List<CustomBaselineProjection> bps = new List<CustomBaselineProjection>();
             foreach (new_baselineprojections item in list)
             {
-                CustomBaselineProjection cbp = new CustomBaselineProjection();
-                cbp.Id = item.Id;
-                cbp.Name = item.new_name;
-                bps.Add(cbp);
+                CustomBaselineProjection projection = new CustomBaselineProjection();
+                projection.Id = item.Id;
+                projection.Name = item.new_name;
+                projection.Year = item.new_Year.Value;
+                projection.CA_Q1_A = (double)item.new_CA_Q1Actual;
+                projection.CA_Q1_P = (double)item.new_Q1_ca;
+                projection.CA_Q2_A = (double)item.new_CA_Q2Actual;
+                projection.CA_Q2_P = (double)item.new_Q2_ca;
+                projection.CA_Q3_A = (double)item.new_CA_Q3Actual;
+                projection.CA_Q3_P = (double)item.new_Q3_ca;
+                projection.CA_Q4_A = (double)item.new_CA_Q4Actual;
+                projection.CA_Q4_P = (double)item.new_Q4_ca;
+                projection.Total_CA_Per_Year_A = (double)item.new_TotalCAperYearActual;
+                projection.Total_CA_Per_Year_P = (double)item.new_TotalCAperYear;
+
+                projection.DB_Q1_A = (double)item.new_DB_Q1Actual;
+                projection.DB_Q1_P = (double)item.new_Q1_db;
+                projection.DB_Q2_A = (double)item.new_DB_Q2Actual;
+                projection.DB_Q2_P = (double)item.new_Q2_db;
+                projection.DB_Q3_A = (double)item.new_DB_Q3Actual;
+                projection.DB_Q3_P = (double)item.new_Q3_db;
+                projection.DB_Q4_A = (double)item.new_DB_Q4Actual;
+                projection.DB_Q4_P = (double)item.new_Q4_db;
+                projection.Total_DB_Per_Year_A = (double)item.new_TotalDisbPerYearActual;
+                projection.Total_DB_Per_Year_P = (double)item.new_TotalDisbPerYear;
+
+                bps.Add(projection);
             }
             return bps;
         }
