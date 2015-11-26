@@ -48,6 +48,7 @@ namespace WebAppWalkthrough
                             where s.Id == bp.Id
                             select s).FirstOrDefault();
                 bps.new_name = "sample";
+                ctx.UpdateObject(bps);
                 ctx.SaveChanges();
             }
             
