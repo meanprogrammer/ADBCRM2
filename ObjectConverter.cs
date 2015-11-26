@@ -48,6 +48,19 @@ namespace WebAppWalkthrough
             return nsos;
         }
 
+        public static List<CustomBaselineProjection> ConvertToBaselineProjection(IEnumerable<new_baselineprojections> list)
+        {
+            List<CustomBaselineProjection> bps = new List<CustomBaselineProjection>();
+            foreach (new_baselineprojections item in list)
+            {
+                CustomBaselineProjection cbp = new CustomBaselineProjection();
+                cbp.Id = item.Id;
+                cbp.Name = item.new_name;
+                bps.Add(cbp);
+            }
+            return bps;
+        }
+
         public static List<CustomSOVCovenant> ConvertToSOVCovenant(IEnumerable<new_covenants> list)
         {
             List<CustomSOVCovenant> nsos = new List<CustomSOVCovenant>();

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebAppWalkthrough.BaselineProjectionService" CodeBehind="BaselineProjectionService.svc.cs" %>

@@ -122,6 +122,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaselineProjectionService.svc" />
     <Content Include="Bhutan.aspx" />
     <Content Include="bin\AntiXSSLibrary.dll" />
     <Content Include="bin\Microsoft.Crm.Sdk.Proxy.dll" />
@@ -152,6 +153,9 @@
     <Content Include="WebForm_FromSavedQuery.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaselineProjectionService.svc.cs">
+      <DependentUpon>BaselineProjectionService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Bhutan.aspx.cs">
       <DependentUpon>Bhutan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +166,7 @@
     <Compile Include="CrmData.svc.cs">
       <DependentUpon>CrmData.svc</DependentUpon>
     </Compile>
+    <Compile Include="CustomBaselineProjection.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +174,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IBaselineProjectionService.cs" />
     <Compile Include="INSOCovenantService.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="ISOVCovenantService.cs" />
