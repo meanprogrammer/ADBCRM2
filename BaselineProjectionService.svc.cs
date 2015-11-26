@@ -47,7 +47,7 @@ namespace WebAppWalkthrough
                 var bps = (from s in ctx.new_baselineprojectionsSet
                             where s.Id == bp.Id
                             select s).FirstOrDefault();
-                bps.new_name = "sample";
+                bps.new_name = bp.Name;
                 ctx.UpdateObject(bps);
                 ctx.SaveChanges();
             }
