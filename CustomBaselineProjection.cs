@@ -15,6 +15,10 @@ namespace WebAppWalkthrough
         public string Name { get; set; }
         [DataMember]
         public int Year { get; set; }
+        [DataMember]
+        public Guid ParentID { get; set; }
+        [DataMember]
+        public string ParentIDString { get; set; }
 
         [DataMember]
         public double CA_Q1_P { get; set; }

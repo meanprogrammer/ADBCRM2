@@ -79,6 +79,9 @@ namespace WebAppWalkthrough
                 projection.Total_DB_Per_Year_A = (double)item.new_TotalDisbPerYearActual;
                 projection.Total_DB_Per_Year_P = (double)item.new_TotalDisbPerYear;
 
+                projection.ParentID = (item.new_opportunity_new_baselineprojections == null) ? Guid.Empty : item.new_opportunity_new_baselineprojections.Id;
+                projection.ParentIDString = string.Format("{0}{1}", "__bo4200", projection.ParentID.ToString());
+
                 bps.Add(projection);
             }
             return bps;

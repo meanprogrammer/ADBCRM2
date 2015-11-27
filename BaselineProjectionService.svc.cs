@@ -69,7 +69,7 @@ namespace WebAppWalkthrough
                 bps.new_Q3_db = (decimal)bp.DB_Q3_P;
                 bps.new_DB_Q4Actual = (int)bp.DB_Q4_A;
                 bps.new_Q4_db = (decimal)bp.DB_Q4_P;
-
+                
                 ctx.UpdateObject(bps);
                 ctx.SaveChanges();
             }
