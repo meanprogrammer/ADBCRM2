@@ -60,6 +60,11 @@ namespace FindObject
             var context = new XrmServiceContext("Xrm");
             using (context)
             {
+
+                WriteAllAttribute<Dependency>(context.DependencySet);
+
+                //var emps = context.promx_promx_team_promx_employeeSet.FirstOrDefault();
+                /*
                 WriteAllAttribute<promx_activityrecord>(context.promx_activityrecordSet);
                 WriteAllAttribute<promx_activityrecordtype>(context.promx_activityrecordtypeSet);
                 WriteAllAttribute<promx_budgetnotification_promx_project>(context.promx_budgetnotification_promx_projectSet);
@@ -223,22 +228,28 @@ namespace FindObject
                 WriteAllAttribute<License>(context.LicenseSet);
                 WriteAllAttribute<ListMember>(context.ListMemberSet);
                 WriteAllAttribute<List>(context.ListSet);
-                WriteAllAttribute<LookUpMapping>(context.LookUpMappingSet);
-                WriteAllAttribute<Mailbox>(context.MailboxSet);
-                WriteAllAttribute<MailboxStatistics>(context.MailboxStatisticsSet);
-                WriteAllAttribute<MailboxTrackingFolder>(context.MailboxTrackingFolderSet);
-                WriteAllAttribute<MailMergeTemplate>(context.MailMergeTemplateSet);
-                WriteAllAttribute<Metric>(context.MetricSet);
-                WriteAllAttribute<MonthlyFiscalCalendar>(context.MonthlyFiscalCalendarSet);
-                WriteAllAttribute<msdyn_new_baselineprojections_knowledgeba>(context.msdyn_new_baselineprojections_knowledgebaSet);
-                WriteAllAttribute<msdyn_new_cofinancing_knowledgebaserecord>(context.msdyn_new_cofinancing_knowledgebaserecordSet);
-                WriteAllAttribute<msdyn_new_commercialcofinancign_knowledge>(context.msdyn_new_commercialcofinancign_knowledgeSet);
-                WriteAllAttribute<msdyn_new_covenants_knowledgebaserecord>(context.msdyn_new_covenants_knowledgebaserecordSet);
-                WriteAllAttribute<msdyn_new_createnewrecord_knowledgebasere>(context.msdyn_new_createnewrecord_knowledgebasereSet);
-                
-                
 
                 
+                WriteAllAttribute<LookUpMapping>(context.LookUpMappingSet);
+                
+                
+                    WriteAllAttribute<Mailbox>(context.MailboxSet);
+                    WriteAllAttribute<MailboxStatistics>(context.MailboxStatisticsSet);
+                    WriteAllAttribute<MailboxTrackingFolder>(context.MailboxTrackingFolderSet);
+                    WriteAllAttribute<MailMergeTemplate>(context.MailMergeTemplateSet);
+                    WriteAllAttribute<Metric>(context.MetricSet);
+                    WriteAllAttribute<MonthlyFiscalCalendar>(context.MonthlyFiscalCalendarSet);
+                    WriteAllAttribute<msdyn_new_baselineprojections_knowledgeba>(context.msdyn_new_baselineprojections_knowledgebaSet);
+                    WriteAllAttribute<msdyn_new_cofinancing_knowledgebaserecord>(context.msdyn_new_cofinancing_knowledgebaserecordSet);
+                    WriteAllAttribute<msdyn_new_commercialcofinancign_knowledge>(context.msdyn_new_commercialcofinancign_knowledgeSet);
+                    WriteAllAttribute<msdyn_new_covenants_knowledgebaserecord>(context.msdyn_new_covenants_knowledgebaserecordSet);
+                    WriteAllAttribute<msdyn_new_createnewrecord_knowledgebasere>(context.msdyn_new_createnewrecord_knowledgebasereSet);
+                    WriteAllAttribute<Resource>(context.ResourceSet);
+                    WriteAllAttribute<promx_promx_team_promx_employee>(context.promx_promx_team_promx_employeeSet);
+                
+                */
+
+
             }
             string[] files = Directory.GetFiles(@"C:\Users\VD2\AttribLogs\");
             foreach (string f in files)
@@ -259,20 +270,43 @@ namespace FindObject
                 StringBuilder builder = new StringBuilder();
                 foreach (var item in list)
                 {
-                    builder.AppendFormat("Entity ID : {0}{1}", item.Id, Environment.NewLine);
-
-                    AttributeCollection attrs = item.Attributes;
-                    foreach (var a in attrs)
+                    try
                     {
-                        if (a.Key == "dependentcomponentobjectid" && a.Value.ToString() == "79b3df74-2cb3-42b4-bd4a-d65754c28d78")
-                        { 
+                        builder.AppendFormat("========================================================{0}", Environment.NewLine);
+                        builder.AppendFormat("Entity ID : {0}{1}", item.Id, Environment.NewLine);
+
+                        AttributeCollection attrs = item.Attributes;
+                        foreach (var a in attrs)
+                        {
+                            if (a.Value is EntityReference)
+                            {
+                                builder.AppendLine("=============EntityReference===============");
+                                EntityReference r = a.Value as EntityReference;
+                                if (r != null)
+                                {
+                                    builder.AppendLine(r.LogicalName);
+                                }
+                                builder.AppendLine("=============EntityReference===============");
+                            }
+
+                            Console.WriteLine("{0} - {1}", a.Key, a.Value.ToString());
+                            builder.AppendFormat("{0} - {1}{2}", a.Key, a.Value.ToString(), Environment.NewLine);
                         }
-                        Console.WriteLine("{0} - {1}", a.Key, a.Value.ToString());
-                        builder.AppendFormat("{0} - {1}{2}", a.Key, a.Value.ToString(), Environment.NewLine);
+                        builder.AppendFormat("========================================================{0}", Environment.NewLine);
+                        File.AppendAllText(string.Format(@"C:\Users\VD2\AttribLogs\{0}.txt", typeof(T).ToString()), builder.ToString());
+                        builder.Clear();
                     }
+                    catch (Exception)
+                    {
+                        //swallow
+                    }
+
+                    
                 }
-                File.WriteAllText(string.Format(@"C:\Users\VD2\AttribLogs\{0}.txt", typeof(T).ToString()), builder.ToString());
-                builder.Clear();
+                
+                
+                
+                
                 Console.WriteLine("Done Writing");
             
         }
